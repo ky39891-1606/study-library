@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>Study Library</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">S</span><div><strong>Study Library</strong><small>Batch library</small></div></div>
+    <span class="pill">GitHub Pages</span>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">YOUR LEARNING SPACE</p>
+      <h1>Find your batch</h1>
+      <p class="sub">Loads the public batch-list endpoint when the browser allows it, with the bundled batch list as a fallback. Select a batch to view its metadata. Batch IDs are not video links.</p>
+      <label class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search by batch name or ID…" autocomplete="off"><button id="clearSearch" type="button" aria-label="Clear search">×</button></label>
+      <div class="stats"><span id="batchCount">Loading batches…</span><span id="status" role="status">Loading data</span></div>
+    </section>
+    <section>
+      <div class="section-head"><h2>Available batches</h2><span id="shownCount"></span></div>
+      <div id="batchGrid" class="grid" aria-live="polite"></div>
+      <div class="load-more-wrap"><button id="loadMore" class="secondary-button" type="button" hidden>Load more batches</button></div>
+      <div id="emptyState" class="empty" hidden>No batches match this search.</div>
+      <div id="errorState" class="notice" hidden></div>
+    </section>
+    <section class="notice info">
+      <strong>About lectures and videos</strong>
+      <p>Batch IDs identify batches; they are not video URLs. The included <code>batches.json</code> contains batch metadata only. To show actual lessons, connect an API or player link that you own or are authorized to use. Do not put private tokens or API keys in this public repository.</p>
+    </section>
+    <footer>Study Library · Static site</footer>
+  </main>
+
+  <dialog id="batchDialog" class="batch-dialog" aria-labelledby="dialogTitle">
+    <div class="dialog-top"><span class="eyebrow">BATCH DETAILS</span><button id="closeDialog" class="icon-button" type="button" aria-label="Close">×</button></div>
+    <div id="dialogImageWrap" class="dialog-image-wrap"></div>
+    <h2 id="dialogTitle">Batch</h2>
+    <p id="dialogStatus" class="dialog-status"></p>
+    <div class="id-row"><code id="dialogBatchId"></code><button id="copyBatchId" type="button" class="secondary-button">Copy ID</button></div>
+    <div class="notice info dialog-note"><strong>Lecture list not included</strong><p>The batch metadata has no lesson/video URL. Open the official platform and sign in, or connect an authorized API that returns permitted lesson data.</p></div>
+    <a class="primary-button" href="https://pw.studyparcham.in/" target="_blank" rel="noopener noreferrer">Open official platform ↗</a>
+  </dialog>
+  <div id="dialogBackdrop" class="dialog-backdrop" hidden></div>
+  <script src="./app.js" defer></script>
+</body>
+</html>
