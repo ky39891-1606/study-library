@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1020">
+  <title>Study Library</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><span class="brand-mark">S</span><div><strong>Study Library</strong><small>Authorized learning dashboard</small></div></div>
+    <span class="pill">GitHub Pages ready</span>
+  </header>
+  <main class="container">
+    <section class="hero">
+      <p class="eyebrow">YOUR LEARNING SPACE</p>
+      <h1>Find your batch</h1>
+      <p class="sub">Search the batch metadata bundled with this site. Lecture playback needs an authorized API or video source that you control or have permission to use.</p>
+      <label class="search"><span aria-hidden="true">⌕</span><input id="searchInput" type="search" placeholder="Search batches by name…" autocomplete="off"><button id="clearSearch" type="button" aria-label="Clear search">×</button></label>
+      <div class="stats"><span id="batchCount">Loading batches…</span><span id="status" role="status">Loading data</span></div>
+    </section>
+    <section>
+      <div class="section-head"><h2>Available batches</h2><span id="shownCount"></span></div>
+      <div id="batchGrid" class="grid" aria-live="polite"></div>
+      <div id="emptyState" class="empty" hidden>No batches match this search.</div>
+      <div id="errorState" class="notice" hidden></div>
+    </section>
+    <section class="notice info">
+      <strong>About lectures and videos</strong>
+      <p>This GitHub Pages package is a static frontend. It does not bypass sign-in, paywalls, or other access controls, and it cannot run a private backend. To show lectures, connect an API you own or are authorized to use, and have it return the permitted lecture metadata and playback URLs.</p>
+      <p>Setup notes are in <code>README.md</code>.</p>
+    </section>
+    <footer>Study Library · Static site</footer>
+  </main>
+  <script src="./app.js" defer></script>
+</body>
+</html>
